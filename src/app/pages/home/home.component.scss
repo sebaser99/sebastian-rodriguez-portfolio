@@ -1,0 +1,17 @@
+@import "vars";
+
+.home {
+  min-height: 100vh;
+  padding: 30px;
+  background-color: $main-color-bright;
+  color: $secondary-color-bright;
+
+  h2 {
+    margin: 0px;
+  }
+
+  &.dark {
+    background-color: $main-color-dark;
+    color: $secondary-color-dark;
+  }
+}

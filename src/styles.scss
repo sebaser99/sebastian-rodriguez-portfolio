@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+@import "vars";
+
+html {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+.button {
+  padding: 10px 20px;
+  border-radius: 15px;
+}
+.button:hover {
+  background-color: $main-color-dark;
+  color: $secondary-color-dark;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
