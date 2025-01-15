@@ -1,7 +1,41 @@
-<div class="home" [ngClass]="{'dark': modeDark}">
+<div class="home" [ngClass]="{'dark-theme': modeDark}">
   <div class="container">
     <navbar (passValue)="changeValue($event)"/>
-    <h2>Soy Sebastian Rodriguez</h2>
-    <h3>Desarrollador Web</h3>
+
+    <section class="me" id="me">
+      <h2 class="raleway-regular-italic"><span>Sebastian Rodriguez</span></h2>
+      <h3>Desarrollador Web</h3>
+      <p>con <span>+2 años de experiencia</span> en el desarrollo de aplicaciones fullstack con <span>Angular, React y Node</span></p>
+      <div class="social-media">
+        <a target="_blank" href="https://github.com/sebaser99"><icon [iconTemplate]="customIconGithub" name="Github" class="icon-template"/></a>
+        <a target="_blank" href="https://www.linkedin.com/in/alex-sebastian-rodriguez-romero-5226a223a/"><icon [iconTemplate]="customIconLinkedin" name="Linkedin" class="icon-template"/></a>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <h2 class="raleway-bold">Proyectos</h2>
+      <h3>Lo más destacado</h3>
+      <p>Soluciones para problemas reales</p>
+
+      <projects />
+
+    </section>
+
+    <section class="experience" id="experience">
+      <h2 class="raleway-bold">Experiencia</h2>
+      <h3>Creando Webs increíbles</h3>
+      <p>La experticia es producto de la iteración constante.</p>
+    </section>
+
   </div>
 </div>
+
+
+<ng-template #customIconGithub>
+  <ng-icon name="bootstrapGithub"></ng-icon>
+</ng-template>
+
+<ng-template #customIconLinkedin>
+  <ng-icon name="bootstrapLinkedin"></ng-icon>
+</ng-template>
+

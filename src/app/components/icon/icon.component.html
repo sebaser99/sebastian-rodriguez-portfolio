@@ -1,0 +1,5 @@
+
+<ng-container *ngIf="iconTemplate" [style]="{width: '100px'}">
+  <ng-container *ngTemplateOutlet="iconTemplate"></ng-container>
+  <p *ngIf="showText" [ngStyle]="iconClass">{{name}}</p>
+</ng-container>

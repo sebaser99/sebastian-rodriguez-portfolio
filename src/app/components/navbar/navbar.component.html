@@ -1,9 +1,28 @@
 <nav class="navbar">
-  <h2>SR</h2>
-  <dark-switch (onNameChange)="passValuef($event)" />
-  <ul>
-    <li>Proyectos</li>
-    <li>Habilidades</li>
-    <li>Experiencia</li>
+  <div class="logo-container">
+    <h1 class="raleway-bold-italic">SR</h1>
+  </div>
+
+   <!-- <div class="navbar-img-container">
+    <img class="navbar-img" src="../../../assets/images/sebas.png" alt="foto perfil">
+   </div> -->
+  <ul *ngIf="!isSmallScreen" class="menu" [ngClass]="{'scrolled': isScrolled}">
+    <li class="link no-border">Proyectos</li>
+    <li class="link no-border">Experiencia</li>
+    <li class="link no-border">Habilidades</li>
   </ul>
+
+  <dark-switch (onNameChange)="passValuef($event)" />
+  <hamburguer-menu [isOpen]="show" *ngIf="isSmallScreen" class="menu-hamburguer"(openMenu)="handleOpen($event)"/>
 </nav>
+
+
+<div class="modal" *ngIf="show">
+  <div class="modal-content">
+    <ul>
+      <li class="link">Proyectos</li>
+      <li class="link">Experiencia</li>
+      <li class="link">Habilidades</li>
+    </ul>
+  </div>
+</div>

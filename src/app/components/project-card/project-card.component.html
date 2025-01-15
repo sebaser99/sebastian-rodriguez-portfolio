@@ -1,0 +1,38 @@
+<div class="project-card" *ngIf="project">
+  <div class="project-img-container">
+    <img class="project-img" [src]="project.image" alt="onemall">
+  </div>
+  <div class="project-content-container">
+    <h3 [ngStyle]="{fontSize: '1.6rem'}">{{project.title}}</h3>
+    <div class="social-media" [ngStyle]="{justifyContent: 'center'}">
+      <div *ngFor="let item of project.stack">
+        <icon [iconTemplate]="customIcon" class="stack" [iconClass]="project.stackClass"
+          [ngStyle]="{backgroundColor: item.color}" [showText]="project.stackShowText"/>
+        <!--   -->
+        <ng-template #customIcon>
+          <ng-icon [name]="item.icon" [ngStyle]="{color: '#fff'}"></ng-icon>
+        </ng-template>
+      </div>
+    </div>
+
+    <p [ngStyle]="{fontSize: '1.1rem', padding: '5px 10px'}">
+     {{project.description}}
+    </p>
+    <div class="social-media">
+      <div *ngFor="let item of project.links">
+        <a target="_blank" [href]="item.url">
+          <icon [iconTemplate]="customIcon" [name]="item.name" class="link link-icon" [ngStyle]="project.linkClass" />
+        </a>
+        <ng-template #customIcon>
+          <ng-icon [name]="item.icon"></ng-icon>
+        </ng-template>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- <ng-template #customIcon>
+  <ng-icon [name]="bootstrapLinkedin"></ng-icon>
+</ng-template> -->

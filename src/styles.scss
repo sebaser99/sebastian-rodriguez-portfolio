@@ -1,14 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
 @import "vars";
+@import "fonts";
+
+:root {
+  --main-color : #{$main-color-bright};
+  --secondary-color: #{$secondary-color-bright};
+  --third-color: #{$third-color-bright};
+  --text-main-color: #{$text-color-bright};
+  --text-secondary-color: #{$text-secondary-bright};
+
+  --primary-font: #{$primary-font};
+}
+
+.home.dark-theme {
+  --main-color : #{$main-color-dark};
+  --secondary-color: #{$secondary-color-dark};
+  --third-color: #{$third-color-dark};
+  --text-main-color: #{$text-color-dark};
+  --text-secondary-color: #{$text-secondary-dark};
+}
+
 
 html {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  background-color: var(--secondary-color);
 }
 body {
   margin: 0;
   padding: 0;
+  font-family: $primary-font;
+  color: var(--text-main-color);
+
 }
 *, *:after, *:before {
   box-sizing: border-box;
@@ -26,4 +50,115 @@ body {
 .container {
   max-width: 1000px;
   margin: 0 auto;
+  padding: 0px 1rem;
+  background-color: var(--main-color);
+
+}
+
+@mixin flex-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-left: 20px;
+}
+
+@mixin background-social {
+  background-color: var(--secondary-color);
+  border-radius: 25px;
+  padding: 0px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in, color 0.2s ease;
+
+  &:hover {
+    background-color: var(--text-main-color);
+    color: var(--main-color);
+  }
+}
+
+
+.github, .icon-template {
+  @include flex-social;
+  @include background-social;
+
+  p {
+    font-size: 16px;
+  }
+}
+.linkedin {
+  @include flex-social;
+  @include background-social;
+  p {
+    font-size: 1rem;
+  }
+
+}
+
+.social-media {
+  @include flex-social;
+  justify-content: start;
+
+  gap: 30px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+
+}
+
+.stack {
+  @include flex-social;
+  border-radius: 25px;
+  padding: 5px 8px;
+  position: relative;
+
+  p {
+    margin: 0px;
+  }
+
+  &:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.link {
+  @include flex-social;
+  @include background-social;
+  border-radius: 25px;
+  padding: 5px 10px;
+  border: 1px solid var(--text-main-color);;
+}
+
+.no-border {
+  border: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 0px 3rem;
+  }
+}
+
+.tooltip {
+  display: inline-block;
+  visibility:hidden;
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  bottom: 125%; /* Ajusta según la posición deseada */
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 12px;
 }
