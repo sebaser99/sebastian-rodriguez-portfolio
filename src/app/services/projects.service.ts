@@ -16,9 +16,10 @@ export class ProjectsService {
   }
 
   linkClass = {
-    marginTop: "10px",
+    marginTop: "0px",
     marginBottom: "10px",
     fontSize: "1.5rem",
+
   }
 
   private projects : IProject[] = [

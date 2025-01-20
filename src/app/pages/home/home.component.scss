@@ -1,5 +1,4 @@
 @mixin section-styles {
-  margin-top: 20px;
   padding: 20px 0px;
   color: var(--text-main-color);
   border-radius: 10px;
@@ -17,11 +16,13 @@
     margin-top: 0px;
     margin-bottom: 10px;
     color: var(--text-secondary-color);
+    font-size: 1rem;
   }
 
   p {
-    margin-top: 5px;
+    margin-top: 1.3rem;
     margin-bottom: 5px;
+    margin-left: 1rem;
     font-size: 1.2rem;
     text-align: left;
 
@@ -35,7 +36,7 @@
 
 .home {
   min-height: 100vh;
-  padding: 0px 15px 10px;
+  padding: 0px 0px 10px;
   background-color: var(--secondary-color);
   color: var(--secondary-color);
 
@@ -45,24 +46,43 @@
   }
   .me {
     @include section-styles;
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
+
 
   .projects {
     @include section-styles;
-
+    // transition: padding-top 0.3s ease;
+  }
+  .scrolled {
+    padding-top: 50px;
   }
 
   .experience {
     @include section-styles;
+    // margin-top: 20px;
+  }
 
+  .habilities {
+    @include section-styles;
   }
 
 }
 
+@media screen and (min-width: 400px){
+  .home {
+    padding: 0px 15px 20px;
+  }
+}
 
 @media screen and (min-width: 768px){
   .home {
     padding: 0px 30px 20px;
+
+    .scrolled {
+      padding-top: 100px;
+    }
   }
 
   .me {
@@ -71,6 +91,8 @@
       font-size: 2rem;
     }
   }
+
+
 }
 
 

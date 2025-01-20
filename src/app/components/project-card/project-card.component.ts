@@ -31,4 +31,7 @@ import { IconComponent } from '../icon/icon.component';
 export class ProjectCardComponent {
   @Input()
   project? : IProject ;
+
+  @Input()
+  last? : boolean = false;
 }

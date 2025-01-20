@@ -17,10 +17,29 @@ import { IconComponent } from '../../components/icon/icon.component';
   viewProviders: [provideIcons({ bootstrapGithub, bootstrapLinkedin})]
 })
 export class HomeComponent {
+
   modeDark: boolean = false;
+  isScrolled: boolean = false;
+  classAddNavbarObject: {apply: boolean, tag: string | null} = {
+    apply: true,
+    tag: null
+  };
+
 
   changeValue(value: any){
     this.modeDark = value;
+  }
+
+  isScrolledToggle(value: any){
+    this.isScrolled = value;
+  }
+
+  changeNavbarClass(value: any){
+    this.classAddNavbarObject = {
+      apply: value.apply,
+      tag: value.tag
+
+    }
   }
 
 }
