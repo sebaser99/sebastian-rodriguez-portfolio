@@ -97,7 +97,7 @@ body {
 .social-media {
   @include flex-social;
   justify-content: start;
-
+  padding-left: 10px;
   gap: 30px;
   margin-top: 20px;
   flex-wrap: wrap;

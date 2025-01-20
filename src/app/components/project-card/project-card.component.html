@@ -6,7 +6,7 @@
   <div class="project-content-container">
     <h3 [ngStyle]="{fontSize: '1.6rem', marginBottom: '1rem'}">{{project.title}}</h3>
     <div class="social-media" [ngStyle]="{marginTop: '0px', paddingLeft: '0px'}">
-      <div *ngFor="let item of project.stack">
+      <div *ngFor="let item of project.stack" [ngStyle]="{paddingLeft: '20px'}">
         <icon [iconTemplate]="customIcon" class="stack" [iconClass]="project.stackClass"
           [ngStyle]="{backgroundColor: item.color}" [showText]="project.stackShowText"/>
         <!--   -->
