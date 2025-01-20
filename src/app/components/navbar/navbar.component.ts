@@ -207,6 +207,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   toggleScroll(fragment: string){
+    this.show = !this.show;
     if(this.isScrolled){
       this.passClassObjectNavbar.emit({apply: false, tag: fragment})
     }

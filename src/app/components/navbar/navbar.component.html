@@ -20,9 +20,10 @@
 <div class="modal" *ngIf="show">
   <div class="modal-content">
     <ul>
-      <li class="link" routerLink="#projects" >Proyectos</li>
+      <li (click)="toggleScroll(item.fragment!)" *ngFor="let item of menuItem" class="link"><a [routerLink]="item.url" [fragment]="item.fragment" [ngClass]="{'active-link': activeLink === item.label}" >{{item.label}}</a></li>
+      <!-- <li class="link" routerLink="#projects" >Proyectos</li>
       <li class="link">Experiencia</li>
-      <li class="link">Habilidades</li>
+      <li class="link">Habilidades</li> -->
     </ul>
   </div>
 </div>
