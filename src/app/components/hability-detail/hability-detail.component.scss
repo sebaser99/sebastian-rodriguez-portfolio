@@ -28,6 +28,7 @@
 
   &.intermediate {
     background-color: #fff3cd;
+    color: #865404;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
     // &:hover {
@@ -36,14 +37,15 @@
     //                 0 4px 6px var(--text-secondary-color);
     // }
 
-    h3 {
-      color: #856404;
-    }
+    // h3 {
+    //   color: #856404;
+    // }
   }
 
 
   &.advanced {
-    background-color: #1f6165;
+    background-color: #046c8f;
+    color: #fff;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
     // &:hover {
@@ -52,9 +54,9 @@
     //                 0 4px 6px var(--text-secondary-color);
     // }
 
-    h3 {
-      color: #ebf9eb;
-    }
+    // h3 {
+    //   color: #ebf9eb;
+    // }
   }
 
 
@@ -68,5 +70,5 @@
   font-size: 1.2rem;
   margin-top: 0px;
   margin-bottom: 0px;
-  color: var(--text-secondary-color);
+  // color: var(--text-secondary-color);
 }

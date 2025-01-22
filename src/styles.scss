@@ -167,13 +167,13 @@ a {
 
 .skill-level {
   display: inline-block;
-  padding: 10px 15px;
+  padding: 5px 0px;
     // border-radius: 20px;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   font-weight: bold;
   text-transform: uppercase;
   margin: 5px;
-  min-width: 105px;
+  min-width: 73px;
   text-align: center;
 }
 
@@ -204,9 +204,9 @@ a {
 }
 
 .skill-level.advanced {
-  background-color: #1f6165;
-  color: #ebf9eb;
-  border: 1px dotted #ebf9eb;;
+  background-color: #046c8f;
+  border: 1px dotted #ebf9eb;
+  color: #fff;
 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
