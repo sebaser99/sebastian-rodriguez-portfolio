@@ -34,11 +34,13 @@
 
     .link {
       color: var(--text-secondary-color);
-      transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+      background-color: var(--secondary-color);
+      transition: color 0.3s ease, font-weight 0.3s ease, backdrop-filter 0.3s ease;
     }
     .link:hover {
-      color: var(--text-main-color);
-      background-color: var(--secondary-color);
+      color: var(--third-color);
+      font-weight: bold;
+
     }
 
     li {
@@ -85,7 +87,8 @@
     }
   }
   .link:hover {
-    color: var( --secondary-color);
+    color: var( --main-color);
+    font-weight: bold;
   }
 
 }

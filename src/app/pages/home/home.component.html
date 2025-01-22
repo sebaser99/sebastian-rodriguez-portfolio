@@ -4,7 +4,8 @@
       (passScrolled)="isScrolledToggle($event)"
       (passClassObjectNavbar)="changeNavbarClass($event)"
     />
-
+  </div>
+  <div class="container" [ngStyle]="{backgroundColor: 'var(--fourth-color)'}">
     <section class="me" >
       <h2 [ngStyle]="{textAlign: 'left'}"><span [ngStyle]="{fontStyle: 'italic', fontSize: '2.5rem'}">Sebastian Rodriguez</span></h2>
       <h3 [ngStyle]="{textAlign: 'left'}">Desarrollador Web</h3>
@@ -14,7 +15,8 @@
         <a target="_blank" href="https://www.linkedin.com/in/alex-sebastian-rodriguez-romero-5226a223a/"><icon [iconTemplate]="customIconLinkedin" name="Linkedin" class="icon-template"/></a>
       </div>
     </section>
-
+  </div>
+  <div class="container">
     <section class="projects" id="projects" [ngClass]="{'scrolled': classAddNavbarObject.apply && classAddNavbarObject.tag === 'projects'}">
       <h2>Proyectos</h2>
       <h3>Lo más destacado</h3>      <!-- <p>Soluciones para problemas reales</p> -->
@@ -38,9 +40,9 @@
           <h3 [ngStyle]="{marginBottom: '20px'}" [ngStyle]>En mejora constante</h3>
         </div>
         <div class="level-container" >
-          <span class="skill-level advanced" (click)="filterSkills('Avanzado')" [ngClass]="{'selected' : filter === 'advanced'}">Avanzado</span>
-          <span class="skill-level intermediate" (click)="filterSkills('Intermedio')" [ngClass]="{'selected' : filter === 'intermediate'}">Intermedio</span>
-          <span class="skill-level basic" (click)="filterSkills('Básico')" [ngClass]="{'selected' : filter === 'basic'}">Básico</span>
+          <span class="skill-level advanced" (click)="filterSkills('Avanzado')" [ngClass]="{'selected' : filter === 'Avanzado'}">Avanzado</span>
+          <span class="skill-level intermediate" (click)="filterSkills('Intermedio')" [ngClass]="{'selected' : filter === 'Intermedio'}">Intermedio</span>
+          <span class="skill-level basic" (click)="filterSkills('Básico')" [ngClass]="{'selected' : filter === 'Básico'}">Básico</span>
           <ng-icon class="clear" name='Todos' [ngStyle]="{fontSize: '2rem', margin: 'auto 5px'}" *ngIf="filter !== ''" name="matFilterAltOffOutline" (click)="filterSkills('')"></ng-icon>
         </div>
       </div>

@@ -57,8 +57,11 @@
   }
   .me {
     @include section-styles;
-    margin-top: 20px;
-    margin-bottom: 50px;
+    // margin-top: 20px;
+    // margin-bottom: 50px;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 
 
@@ -72,7 +75,7 @@
 
   .experience {
     @include section-styles;
-    background-color: var(--secondary-color);
+    // background-color: var(--secondary-color);
     // margin-top: 20px;
   }
 
@@ -108,7 +111,7 @@
 }
 
 .background-secondary {
-  background-color: var(--secondary-color);
+  background-color: var(--fourth-color);
   padding-top: 50px;
 }
 
