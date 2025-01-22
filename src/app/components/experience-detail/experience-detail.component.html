@@ -1,0 +1,15 @@
+<div class="experience-item">
+  <div class="experience-item-date">
+    <p>{{experienceItem?.from }}  <span><b [ngStyle]="{margin: '0px 5px'}">hasta</b></span> {{ experienceItem?.until}}</p>
+  </div>
+  <div class="experience-item-info">
+    <h2>{{experienceItem?.company}}</h2>
+    <h3>{{experienceItem?.position}}</h3>
+    <div class="experience-item-description">
+      {{experienceItem?.description}}
+    </div>
+    <p class="experience-item-skills">
+      <span *ngFor="let skill of experienceItem?.skills">{{skill}}</span>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div >
+  <div>
+    <div class="skills fronted fade-in-out" *ngIf="fronted.length > 0"
+      [class.visible]="fronted.length > 0"
+      [class.hidden]="!(fronted.length > 0)">
+      <h3>Fronted</h3>
+      <div class="skills-grid">
+        <hability-detail *ngFor="let hability of fronted" [hability]="hability"  />
+      </div>
+    </div>
+    <div class="skills backend fade-in-out" *ngIf="backend.length > 0"
+      [class.visible]="backend.length > 0"
+      [class.hidden]="!(backend.length > 0)">
+      <h3>Backend</h3>
+      <div class="skills-grid">
+        <hability-detail *ngFor="let hability of backend" [hability]="hability"  />
+      </div>
+    </div>
+    <div class="skills architecture fade-in-out" *ngIf="architecture.length > 0"
+      [class.visible]="architecture.length > 0"
+      [class.hidden]="!(architecture.length > 0)">
+      <h3>Arquitectura</h3>
+      <div class="skills-grid">
+        <hability-detail *ngFor="let hability of architecture" [hability]="hability"  />
+      </div>
+    </div>
+    <div class="skills mobile fade-in-out" *ngIf="mobile.length > 0"
+      [class.visible]="mobile.length > 0"
+      [class.hidden]="!(mobile.length > 0)">
+      <h3>Mobile</h3>
+      <div class="skills-grid">
+        <hability-detail *ngFor="let hability of mobile" [hability]="hability"  />
+      </div>
+    </div>
+  </div>
+  <!-- <div class="skills-grid">
+    <hability-detail *ngFor="let hability of habilities" [hability]="hability"/>
+  </div> -->
+  </div>

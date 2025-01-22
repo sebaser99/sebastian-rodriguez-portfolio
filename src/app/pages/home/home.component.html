@@ -6,8 +6,8 @@
     />
 
     <section class="me" >
-      <h2><span [ngStyle]="{fontStyle: 'italic', fontSize: '2.5rem'}">Sebastian Rodriguez</span></h2>
-      <h3 >Desarrollador Web</h3>
+      <h2 [ngStyle]="{textAlign: 'left'}"><span [ngStyle]="{fontStyle: 'italic', fontSize: '2.5rem'}">Sebastian Rodriguez</span></h2>
+      <h3 [ngStyle]="{textAlign: 'left'}">Desarrollador Web</h3>
       <p>con <span>+2 años de experiencia</span> en el desarrollo de aplicaciones fullstack con <span>Angular, React y Node</span></p>
       <div class="social-media">
         <a target="_blank" href="https://github.com/sebaser99"><icon [iconTemplate]="customIconGithub" name="Github" class="icon-template"/></a>
@@ -20,21 +20,34 @@
       <h3>Lo más destacado</h3>      <!-- <p>Soluciones para problemas reales</p> -->
       <projects />
     </section>
-
+  </div>
+  <div class="container background-secondary">
     <section class="experience" id="experience" [ngClass]="{'scrolled': classAddNavbarObject.apply && classAddNavbarObject.tag === 'experience'}">
       <h2>Experiencia</h2>
       <h3>Creando Webs increíbles</h3>
-      <p>La experticia es producto de la iteración constante.</p>
-      <projects />
+      <!-- <p>La experticia es producto de la iteración constante.</p> -->
+      <experience />
     </section>
+  </div>
 
+  <div class="container">
     <section class="habilities" id="habilities" [ngClass]="{'scrolled': classAddNavbarObject.apply && classAddNavbarObject.tag === 'habilities'}">
-      <h2>Habilidades</h2>
-      <h3>En mejora constante</h3>
-      <p>Lo que aportará valor a tu compañia o proyecto.</p>
-      <projects />
-    </section>
+      <div class="habilities-title-container">
+        <div>
+          <h2>Habilidades</h2>
+          <h3 [ngStyle]="{marginBottom: '20px'}" [ngStyle]>En mejora constante</h3>
+        </div>
+        <div class="level-container" >
+          <span class="skill-level advanced" (click)="filterSkills('Avanzado')" [ngClass]="{'selected' : filter === 'advanced'}">Avanzado</span>
+          <span class="skill-level intermediate" (click)="filterSkills('Intermedio')" [ngClass]="{'selected' : filter === 'intermediate'}">Intermedio</span>
+          <span class="skill-level basic" (click)="filterSkills('Básico')" [ngClass]="{'selected' : filter === 'basic'}">Básico</span>
+          <ng-icon class="clear" name='Todos' [ngStyle]="{fontSize: '2rem', margin: 'auto 5px'}" *ngIf="filter !== ''" name="matFilterAltOffOutline" (click)="filterSkills('')"></ng-icon>
+        </div>
+      </div>
 
+      <!-- <p>Lo que aportará valor a tu compañia o proyecto.</p>   -->
+      <habilities [filter]="filter"/>
+    </section>
   </div>
 </div>
 

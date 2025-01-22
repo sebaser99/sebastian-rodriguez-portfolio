@@ -1,0 +1,72 @@
+.skill-card {
+  // background: var(--secondary-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 5px 12px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  width: 120px;
+  justify-self: center;
+  // border: 1px solid var(--third-color)
+
+
+  &.basic {
+    background-color: #cce5ff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    // &:hover {
+    //   transform: translateY(-5px);
+    //     box-shadow: 0 10px 15px var(--third-color),
+    //                 0 4px 6px var(--text-secondary-color);
+    // }
+
+    h3 {
+      color: #004085;
+    }
+  }
+
+
+  &.intermediate {
+    background-color: #fff3cd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    // &:hover {
+    //   transform: translateY(-5px);
+    //     box-shadow: 0 10px 15px var(--third-color),
+    //                 0 4px 6px var(--text-secondary-color);
+    // }
+
+    h3 {
+      color: #856404;
+    }
+  }
+
+
+  &.advanced {
+    background-color: #1f6165;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    // &:hover {
+    //   transform: translateY(-5px);
+    //     box-shadow: 0 10px 15px var(--third-color),
+    //                 0 4px 6px var(--text-secondary-color);
+    // }
+
+    h3 {
+      color: #ebf9eb;
+    }
+  }
+
+
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+}
+
+.skill-card h3 {
+  font-size: 1.2rem;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: var(--text-secondary-color);
+}
