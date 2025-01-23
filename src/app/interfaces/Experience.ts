@@ -4,6 +4,11 @@ export interface Experience {
   description: string;
   from: string;
   until: string;
-  skills: string[];
+  skills: Skills[];
   modality: string;
+}
+
+export interface Skills {
+  icon: string,
+  name: string
 }

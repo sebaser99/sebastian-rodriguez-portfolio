@@ -8,8 +8,13 @@
     <div class="experience-item-description">
       {{experienceItem?.description}}
     </div>
-    <p class="experience-item-skills">
-      <span *ngFor="let skill of experienceItem?.skills">{{skill}}</span>
-    </p>
+    <div class="experience-item-skills">
+      <div *ngFor="let skill of experienceItem?.skills">
+        <ng-icon   [attr.data-skill]="skill.name+index" (mouseenter)="showIconName($event, true, skill.name)" (mouseleave)="showIconName($event, false, skill.name)" class="clear skill-icon"  [ngStyle]="{fontSize: '2rem', margin: 'auto 5px'}"  [name]="skill.icon"></ng-icon>
+        <span class="skill-name opacity-0"
+        >
+        {{skill.name}}</span>
+      </div>
+    </div>
   </div>
 </div>

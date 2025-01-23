@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './hability-detail.component.html',
-  styleUrl: './hability-detail.component.scss'
+  styleUrl: './hability-detail.component.scss',
 })
 export class HabilityDetailComponent {
   @Input() hability?: Habilities;

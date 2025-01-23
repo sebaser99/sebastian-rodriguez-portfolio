@@ -9,6 +9,15 @@ import { ProjectsComponent } from "../../components/projects/projects.component"
 import { IconComponent } from '../../components/icon/icon.component';
 import { ExperienceComponent } from "../../components/experience/experience.component";
 import { HabilitiesComponent } from "../../components/habilities/habilities.component";
+import { diFlutterOriginal } from '@ng-icons/devicon/original';
+import { matfNodejsColored } from '@ng-icons/material-file-icons/colored';
+import { diReactOriginal } from '@ng-icons/devicon/original';
+import { diReduxOriginal } from '@ng-icons/devicon/original';
+import { diMysqlOriginal } from '@ng-icons/devicon/original';
+import { diNestjsOriginal } from '@ng-icons/devicon/original';
+import { diDigitaloceanOriginalWordmark } from '@ng-icons/devicon/original';
+import { diNginxOriginal } from '@ng-icons/devicon/original';
+import { diAngularjsOriginal } from '@ng-icons/devicon/original';
 
 
 @Component({
@@ -18,7 +27,10 @@ import { HabilitiesComponent } from "../../components/habilities/habilities.comp
     ExperienceComponent, HabilitiesComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
-  viewProviders: [provideIcons({ bootstrapGithub, bootstrapLinkedin, matFilterAltOffOutline})]
+  viewProviders: [provideIcons({ bootstrapGithub, bootstrapLinkedin, matFilterAltOffOutline,
+    diFlutterOriginal, matfNodejsColored, diReactOriginal, diReduxOriginal, diMysqlOriginal,
+    diNestjsOriginal, diDigitaloceanOriginalWordmark, diNginxOriginal, diAngularjsOriginal
+  })]
 })
 export class HomeComponent {
   filter : string = '';
