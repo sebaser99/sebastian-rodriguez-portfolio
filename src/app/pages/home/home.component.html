@@ -1,12 +1,12 @@
 <div class="home" [ngClass]="{'dark-theme': modeDark}" >
-  <div class="container">
+  <header class="container">
     <navbar (passValue)="changeValue($event)"
       (passScrolled)="isScrolledToggle($event)"
       (passClassObjectNavbar)="changeNavbarClass($event)"
     />
-  </div>
-  <div class="container" [ngStyle]="{backgroundColor: 'var(--fourth-color)'}">
-    <section class="me" >
+  </header>
+  <div class="container background-me">
+    <section class="me " >
         <h2 [ngStyle]="{textAlign: 'left'}"><span [ngStyle]="{fontSize: '2.5rem'}">Sebastian Rodriguez</span></h2>
       <h3 [ngStyle]="{textAlign: 'left', marginBottom: '20px'}">Desarrollador Web</h3>
       <p>con <span>+2 años de experiencia</span> en el desarrollo de aplicaciones fullstack con <span>Angular, React y Node</span></p>
@@ -15,18 +15,29 @@
         <a target="_blank" href="https://www.linkedin.com/in/alex-sebastian-rodriguez-romero-5226a223a/"><icon [iconTemplate]="customIconLinkedin" name="Linkedin" class="icon-template"/></a>
       </div>
     </section>
+    <section class="call-to-action">
+      <div>
+        <ng-icon class="cv-icon" name="tablerFileCv"></ng-icon>
+        <button class="btn-icon btn-icon-download"><ng-icon class="download-icon" name="matDownload"></ng-icon></button>
+      </div>
+      <div class="flex">
+        <span class="email">sebaser99&#64;gmail.com</span>
+        <button class="btn-icon btn-icon-send"><ng-icon class="send-icon" name="matSend" ></ng-icon></button>
+      </div>
+    </section>
   </div>
+
   <div class="container">
     <section class="projects" id="projects" [ngClass]="{'scrolled': classAddNavbarObject.apply && classAddNavbarObject.tag === 'projects'}">
-      <h2>Proyectos</h2>
-      <h3>Lo más destacado</h3>      <!-- <p>Soluciones para problemas reales</p> -->
+      <h2 class="polygon" [ngStyle]="{marginBottom: '7px'}">Proyectos</h2>
+      <h3 [ngStyle]="{marginLeft: '30px'}">Lo más destacado</h3>      <!-- <p>Soluciones para problemas reales</p> -->
       <projects />
     </section>
   </div>
   <div class="container background-secondary">
     <section class="experience" id="experience" [ngClass]="{'scrolled': classAddNavbarObject.apply && classAddNavbarObject.tag === 'experience'}">
-      <h2>Experiencia</h2>
-      <h3>Creando Webs increíbles</h3>
+      <h2 class="polygon" [ngStyle]="{marginBottom: '7px'}">Experiencia</h2>
+      <h3 [ngStyle]="{marginLeft: '30px'}">Creando Webs increíbles</h3>
       <!-- <p>La experticia es producto de la iteración constante.</p> -->
       <experience />
     </section>
@@ -36,8 +47,8 @@
     <section class="habilities" id="habilities" [ngClass]="{'scrolled': classAddNavbarObject.apply && classAddNavbarObject.tag === 'habilities'}">
       <div class="habilities-title-container">
         <div>
-          <h2>Habilidades</h2>
-          <h3 [ngStyle]="{marginBottom: '20px'}" [ngStyle]>En mejora constante</h3>
+          <h2 class="polygon" [ngStyle]="{marginBottom: '7px'}">Habilidades</h2>
+          <h3 [ngStyle]="{marginBottom: '20px', marginLeft: '30px'}">En mejora constante</h3>
         </div>
         <div class="level-container" >
           <span class="skill-level advanced" (click)="filterSkills('Avanzado')" [ngClass]="{'selected' : filter === 'Avanzado'}">Avanzado</span>
@@ -51,6 +62,10 @@
       <habilities [filter]="filter"/>
     </section>
   </div>
+  <footer class="footer">
+    <p> Dev by Sebastian Rodriguez</p>
+    <p>All Rights Reserved - 2025</p>
+  </footer>
 </div>
 
 

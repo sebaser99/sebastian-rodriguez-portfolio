@@ -5,21 +5,19 @@
     </div>
   <div class="project-content-container">
     <h3 [ngStyle]="{fontSize: '1.6rem', marginBottom: '1rem'}">{{project.title}}</h3>
-    <div class="social-media" [ngStyle]="{marginTop: '0px', paddingLeft: '0px'}">
-      <div *ngFor="let item of project.stack" [ngStyle]="{paddingLeft: '20px'}">
-        <icon [iconTemplate]="customIcon" class="stack" [iconClass]="project.stackClass"
-          [ngStyle]="{backgroundColor: item.color}" [showText]="project.stackShowText"/>
-        <!--   -->
-        <ng-template #customIcon>
-          <ng-icon [name]="item.icon" [ngStyle]="{color: '#fff'}"></ng-icon>
-        </ng-template>
+    <div class="project-item-skills" [ngStyle]="{marginTop: '0px', paddingLeft: '0px'}">
+      <div *ngFor="let item of project.stack">
+        <ng-icon [attr.data-project]="item.name+index" (mouseenter)="showIconName($event, true, item.name)" (mouseleave)="showIconName($event, false, item.name)" class="clear skill-icon"    [ngStyle]="{fontSize: '2rem', margin: 'auto 5px'}"  [name]="item.icon" ></ng-icon>
+        <span class="project-skill-name opacity-0"
+        >
+        {{item.name}}</span>
       </div>
     </div>
 
     <p [ngStyle]="{fontSize: '1.1rem', padding: '5px 10px'}">
      {{project.description}}
     </p>
-    <div class="social-media" [ngStyle]="{marginTop: '0px'}">
+    <div class="social-media" [ngStyle]="{marginTop: '0px', justifyContent: 'start'}">
       <div *ngFor="let item of project.links">
         <a target="_blank" [href]="item.url">
           <icon [iconTemplate]="customIcon" [name]="item.name" class="link link-icon" [ngStyle]="project.linkClass" />

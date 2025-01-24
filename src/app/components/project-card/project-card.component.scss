@@ -3,8 +3,8 @@
   background-color: var(--secondary-color);
   margin-bottom: 50px;
   border-radius: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
-  0 1px 3px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px rgba(4, 108, 143, 0.1),
+  0 4px 3px rgba(4, 108, 143, 0.06);
 
   .project-img-container {
     padding: 0px;
@@ -15,6 +15,39 @@
 
   .project-content-container {
     padding: 0px 10px;
+
+    .project-item-skills {
+      color: var(--secondary-color);
+      font-weight: bold;
+      font-style: oblique;
+      display: flex;
+      flex-wrap: wrap ;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 5px;
+      margin-top: 1em  ;
+
+      // .skill-icon {
+      //   position: relative;
+      // }
+
+     .project-skill-name {
+      position: absolute;
+      color: var(--text-secondary-color);
+      margin-top: 1px;
+      transition: opacity 0.2 ease;
+      display: block;
+      background-color: transparent;
+      // top: 0;
+      // left: 110px;
+     }
+     .opacity-1 {
+      opacity: 1;
+     }
+     .opacity-0 {
+      opacity: 0;
+     }
+    }
   }
 
   .project-content-container h3 {

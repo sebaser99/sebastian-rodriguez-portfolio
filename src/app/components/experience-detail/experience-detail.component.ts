@@ -50,6 +50,5 @@ export class ExperienceDetailComponent  {
         element.classList.toggle('opacity-0')
       }
     }
-    console.log(this.showIcon)
   }
 }

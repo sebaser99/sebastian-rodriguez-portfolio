@@ -28,8 +28,8 @@ export class ProjectsService {
       description: "Ecommerce para fondo de empleados con plataforma de gestión granular.",
       image: "../../../assets/images/onemall-1.png",
       stack : [
-        {icon:"simpleAngular", name: "Angular", color: "#DD0031" }, {icon:"simpleNodedotjs", name: "Node", color: "#339933"},
-        {icon:"simpleTsnode", name: "TypeScript", color: "#0176c5" }, {icon:"simplePostgresql", name: "Postgresql", color: "#30648b"}
+        {icon:"diAngularjsOriginal", name: "Angular", color: "#DD0031" }, {icon:"matfNodejsColored'", name: "Node", color: "#339933"},
+        {icon:"diTypescriptOriginal", name: "TypeScript", color: "#0176c5" }, {icon:"diPostgresqlOriginal", name: "Postgresql", color: "#30648b"}
       ],
       stackShowText: false,
       links : [{icon: 'bootstrapLink45deg', name: "Preview", url: "https://tiendaonemall.com.co/#/"},
@@ -42,8 +42,8 @@ export class ProjectsService {
       title: "Coutivaq Perfumería",
       description: "Ecommerce de perfumería, con website y plataforma de gestión.",
       image: "../../../assets/images/coutivaq_site.png",
-      stack : [{icon:"simpleAngular", name: "Angular", color: "#DD0031" }, {icon:"simpleNodedotjs", name: "Node", color: "#339933"},
-        {icon:"simpleTsnode", name: "TypeScript", color: "#0176c5" }, {icon:"simplePostgresql", name: "Postgresql", color: "#30648b"}
+      stack : [{icon:"diAngularjsOriginal", name: "Angular", color: "#DD0031" }, {icon:"matfNodejsColored'", name: "Node", color: "#339933"},
+        {icon:"diTypescriptOriginal", name: "TypeScript", color: "#0176c5" }, {icon:"diPostgresqlOriginal", name: "Postgresql", color: "#30648b"}
       ],
       stackShowText: false,
       links : [{icon: 'bootstrapLink45deg', name: "Preview", url: "https://coutivaq-fronted.vercel.app/" },
@@ -57,8 +57,8 @@ export class ProjectsService {
       description: "Landing Page para agencia de publicidad.",
       image: "../../../assets/images/vox-studio.png",
       stack : [
-        {icon:"simpleWordpress ", name: "Wordpress", color: "#00699b" }, {icon:"simplePhp", name: "php", color: "#8693bd"},
-        {icon:"simpleCss3", name: "CSS3", color: "#205fad" }, {icon:"simpleJavascript", name: "JavaScript", color: "#f6dd1e"}
+        {icon:'diWordpressOriginal', name: "Wordpress", color: "#00699b" }, {icon:"diPhpOriginal", name: "php", color: "#8693bd"},
+        {icon:"diCss3Original", name: "CSS3", color: "#205fad" }, {icon:"diJavascriptOriginal", name: "JavaScript", color: "#f6dd1e"}
       ],
       stackShowText: false,
       links : [{icon: 'bootstrapLink45deg', name: "Preview", url: "https://voxstudiodigital.com/" },

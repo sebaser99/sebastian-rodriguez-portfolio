@@ -1,3 +1,3 @@
 <div class="projects"  >
-  <project-card *ngFor="let project of projects; let last = last" [project]="project" [last]="last"/>
+  <project-card *ngFor="let project of projects; let last = last; let i = index" [project]="project" [last]="last" [index]="i"/>
 </div>

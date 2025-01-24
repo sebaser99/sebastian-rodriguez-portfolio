@@ -11,6 +11,15 @@
   --text-secondary-color: #{$text-secondary-bright};
 
   --primary-font: #{$primary-font};
+  --gradient1: #{$gradient1-bright};
+  --gradient2: #{$gradient2-bright};       /* Azul claro inicial */
+  --gradient3: #{$gradient3-bright};       /* Azul muy claro */
+  --gradient4: #{$gradient4-bright};      /* Azul pastel */
+  --gradient5: #{$gradient5-bright};      /* Azul brillante pastel */
+  --gradient6: #{$gradient6-bright};      /* Azul intermedio brillante */
+  --gradient7: #{$gradient7-bright};
+  --gradient8: #{$gradient8-bright};   /* Azul más vibrante */
+  --gradient9: #{$gradient9-bright};
 }
 
 .home.dark-theme {
@@ -20,9 +29,18 @@
   --fourth-color: #{$fourth-color-dark};
   --text-main-color: #{$text-color-dark};
   --text-secondary-color: #{$text-secondary-dark};
+
+  --gradient1: #{$gradient1-dark};
+  --gradient2: #{$gradient2-dark};       /* Azul claro inicial */
+  --gradient3: #{$gradient3-dark};       /* Azul muy claro */
+  --gradient4: #{$gradient4-dark};      /* Azul pastel */
+  --gradient5: #{$gradient5-dark};      /* Azul brillante pastel */
+  --gradient6: #{$gradient6-dark};      /* Azul intermedio brillante */
+  --gradient7: #{$gradient7-dark};
+  --gradient8: #{$gradient8-dark};   /* Azul más vibrante */
+  --gradient9: #{$gradient9-dark};
+
 }
-
-
 html {
   margin: 0px;
   padding: 0px;
@@ -59,7 +77,7 @@ body {
 
 @mixin flex-social {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   gap: 10px;
   padding-left: 20px;
@@ -67,6 +85,7 @@ body {
 
 @mixin background-social {
   background-color: var(--secondary-color);
+  border: 1px solid var(--text- secondary-color);
   border-radius: 25px;
   padding: 0px 15px;
   cursor: pointer;
@@ -98,7 +117,6 @@ body {
 
 .social-media {
   @include flex-social;
-  justify-content: start;
   padding-left: 10px;
   gap: 30px;
   margin-top: 20px;
@@ -238,4 +256,25 @@ a {
 .fade-in-out.hidden {
   opacity: 0;
   transform: translateY(-20px);
+}
+
+.background-me{
+  background: linear-gradient(
+    to bottom,
+    var(--gradient1),
+    var(--gradient2),       /* Azul claro inicial */
+    var(--gradient3),       /* Azul muy claro */
+    var(--gradient4),      /* Azul pastel */
+    var(--gradient5),      /* Azul brillante pastel */
+    var(--gradient6),      /* Azul intermedio brillante */
+    var(--gradient7),
+    var(--gradient8),   /* Azul más vibrante */
+    var(--gradient9),
+  );
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

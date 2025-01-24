@@ -7,9 +7,29 @@ $fourth-color-dark: #202038;
 $text-color-dark: #bab195; // Texto principal (alto contraste para fondo oscuro).
 $text-secondary-dark: #b8bbbe;
 
+$gradient1-dark:#11091a;
+$gradient2-dark:#1a0f2a ;       /* Azul claro inicial */
+$gradient3-dark:#2a1b3d ;       /* Azul muy claro */
+$gradient4-dark:#3b2a4f ;      /* Azul pastel */
+$gradient5-dark:#4c3a62 ;      /* Azul brillante pastel */
+$gradient6-dark:#5e4b74 ;      /* Azul intermedio brillante */
+$gradient7-dark:#7b6287 ;
+$gradient8-dark:#e8d18e ;   /* Azul más vibrante */
+$gradient9-dark:#e8d18f ;
+
+$gradient1-bright: #fff;
+$gradient2-bright:#e9f1fa ;       /* Azul claro inicial */
+$gradient3-bright:#d8edf6 ;       /* Azul muy claro */
+$gradient4-bright:#a5d3e8 ;      /* Azul pastel */
+$gradient5-bright:#8ac4e0 ;      /* Azul brillante pastel */
+$gradient6-bright:#5bb1d6 ;      /* Azul intermedio brillante */
+$gradient7-bright:#079dcf ;
+$gradient8-bright:#0898c8 ;   /* Azul más vibrante */
+$gradient9-bright:#046c8f ;
+
 
 $main-color-bright:  #fff;// Fondo principal claro
-$secondary-color-bright: #f3f5f8;
+$secondary-color-bright: hsl(0, 0%, 97%);
 $third-color-bright:  #046c8f; // Elementos destacados (botones, enlaces)
 $fourth-color-bright: #e9f1fa;
 $text-color-bright:   #04536d; //do de secciones
