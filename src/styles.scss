@@ -20,6 +20,8 @@
   --gradient7: #{$gradient7-bright};
   --gradient8: #{$gradient8-bright};   /* Azul más vibrante */
   --gradient9: #{$gradient9-bright};
+  --icon-text-color: #{$icon-text-color-bright};
+  --text-color-ironman: #{$text-color-ironman-bright};
 }
 
 .home.dark-theme {
@@ -29,6 +31,8 @@
   --fourth-color: #{$fourth-color-dark};
   --text-main-color: #{$text-color-dark};
   --text-secondary-color: #{$text-secondary-dark};
+  --icon-text-color: #{$icon-text-color-dark};
+  --text-color-ironman: #{$text-color-ironman-dark};
 
   --gradient1: #{$gradient1-dark};
   --gradient2: #{$gradient2-dark};       /* Azul claro inicial */
@@ -272,9 +276,47 @@ a {
     var(--gradient9),
   );
 }
-
+.background-ironman{
+  background: linear-gradient(
+    to right,
+    var(--gradient1),
+    var(--gradient2),       /* Azul claro inicial */
+    var(--gradient3),       /* Azul muy claro */
+    var(--gradient4),      /* Azul pastel */
+    var(--gradient5),      /* Azul brillante pastel */
+    var(--gradient6),      /* Azul intermedio brillante */
+    var(--gradient7),
+    var(--gradient8),   /* Azul más vibrante */
+    var(--gradient9),
+  );
+}
 .flex {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+.logo-container {
+  // border-radius: 50%;
+  clip-path: polygon(
+    30% 0%, 70% 0%, /* Top */
+    100% 30%, 100% 70%, /* Right */
+    70% 100%, 30% 100%, /* Bottom */
+    0% 70%, 0% 30% /* Left */
+  );
+  width: 45px;
+  height: 34px;
+color: var(--third-color);
+  // color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid var(--third-color);
+
+
+  h1 {
+    margin: 0;
+    font-size: 1.6rem;
+  }
 }

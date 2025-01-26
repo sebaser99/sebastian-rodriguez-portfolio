@@ -107,29 +107,6 @@
    }
 }
 
-.logo-container {
-  // border-radius: 50%;
-  clip-path: polygon(
-    30% 0%, 70% 0%, /* Top */
-    100% 30%, 100% 70%, /* Right */
-    70% 100%, 30% 100%, /* Bottom */
-    0% 70%, 0% 30% /* Left */
-  );
-  width: 45px;
-  height: 34px;
-color: var(--third-color);
-  // color: var(--main-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 3px solid var(--third-color);
-
-
-  h1 {
-    margin: 0;
-    font-size: 1.6rem;
-  }
-}
 
 .active-link {
   color: var(--third-color); /* Cambia a tu color preferido */

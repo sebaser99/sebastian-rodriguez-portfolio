@@ -17,6 +17,18 @@ export function app(): express.Express {
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
 
+
+  // server.get('/download-cv', (req, res, next) => {
+  //   const filePath = join(process.cwd(), 'src/assets/files/hv_sebastian_rodriguez.pdf');
+
+  //   res.download(filePath, 'cv-Sebastian-Rodriguez.pdf', (err)=> {
+  //     if (err) {
+  //       console.error('Error al descargar el archivo:', err);
+  //       res.status(500).send('Error al descargar el archivo.');
+  //     }
+  //   })
+  // })
+
   // Example Express Rest API endpoints
   // server.get('/api/**', (req, res) => { });
   // Serve static files from /browser
@@ -40,6 +52,8 @@ export function app(): express.Express {
       .then((html) => res.send(html))
       .catch((err) => next(err));
   });
+
+
 
   return server;
 }

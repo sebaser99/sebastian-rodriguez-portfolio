@@ -6,6 +6,7 @@ $third-color-dark:  #e8d18e;
 $fourth-color-dark: #202038;
 $text-color-dark: #bab195; // Texto principal (alto contraste para fondo oscuro).
 $text-secondary-dark: #b8bbbe;
+$icon-text-color-dark: #11091a;;
 
 $gradient1-dark:#11091a;
 $gradient2-dark:#1a0f2a ;       /* Azul claro inicial */
@@ -16,6 +17,7 @@ $gradient6-dark:#5e4b74 ;      /* Azul intermedio brillante */
 $gradient7-dark:#7b6287 ;
 $gradient8-dark:#e8d18e ;   /* Azul más vibrante */
 $gradient9-dark:#e8d18f ;
+$text-color-ironman-dark:#2a1b3d;
 
 $gradient1-bright: #fff;
 $gradient2-bright:#e9f1fa ;       /* Azul claro inicial */
@@ -25,7 +27,8 @@ $gradient5-bright:#8ac4e0 ;      /* Azul brillante pastel */
 $gradient6-bright:#5bb1d6 ;      /* Azul intermedio brillante */
 $gradient7-bright:#079dcf ;
 $gradient8-bright:#0898c8 ;   /* Azul más vibrante */
-$gradient9-bright:#046c8f ;
+$gradient9-bright:#f0f0f0 ;
+$text-color-ironman-bright:#04536d;
 
 
 $main-color-bright:  #fff;// Fondo principal claro
@@ -34,7 +37,7 @@ $third-color-bright:  #046c8f; // Elementos destacados (botones, enlaces)
 $fourth-color-bright: #e9f1fa;
 $text-color-bright:   #04536d; //do de secciones
 $text-secondary-bright: #4c495f;// secundario (menos relevante)
-
+$icon-text-color-bright: #046c8f ;
 
 // $primary-font: "Lato", serif;
 $primary-font: "Noto Sans Hatran", serif;
