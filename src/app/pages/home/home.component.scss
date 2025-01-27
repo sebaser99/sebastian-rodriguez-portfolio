@@ -47,7 +47,7 @@
   color: var(--text-color-ironman);
   transition: transform 0.2s ease;
   &:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 }
 
@@ -195,9 +195,14 @@ iroman-menu
     background-color: transparent;
     border-radius: 50%;
     position: relative;
-    overflow: hidden;
     box-shadow: 0 0 40px rgba(255, 255, 235, 0.8);
-    border: 1px solid var(--third-color);
+    animation-play-state: running;
+    position: relative;
+    overflow: hidden;
+
+    // visibility: hidden;
+    // border: 1px solid var(--third-color);
+
 
     .ironman-options {
       transform: rotate(45deg);
@@ -215,7 +220,6 @@ iroman-menu
         transition: transform 0.3s ease, background 0.3s ease;
         &:hover {
           @include backgroundIron();
-          transform: scale(1.1);
           .option1 {
             .option-container {
               .email{
@@ -344,7 +348,6 @@ iroman-menu
         transition: transform 0.3s ease, background 0.3s ease;
         &:hover {
           @include backgroundIron();
-          transform: scale(1.1);
           .option2 {
             .option-container {
               a{
@@ -408,7 +411,6 @@ iroman-menu
         transition: transform 0.3s ease, background 0.3s ease;
         &:hover {
           @include backgroundIron();
-          transform: scale(1.1);
           .option3 {
             .option-container {
               a{
@@ -474,7 +476,6 @@ iroman-menu
         transition: transform 0.3s ease, background 0.3s ease;
         &:hover {
           @include backgroundIron();
-          transform: scale(1.1);
           .option4 {
               .cv-container {
                 .cv-icon, .download-icon  {
@@ -569,19 +570,7 @@ iroman-menu
 
     .ironman-nucleus {
       @include backgroundIron();
-      // background-image: radial-gradient(
-      //   circle,
-      //   rgb(253, 254, 255) 0%,
-      //   rgb(167, 201, 252) 35%,
-      //   rgb(138, 183, 252) 40%,
-      //   rgba(31, 111, 235, 1) 45%,
-      //   rgba(31, 111, 235, 0.6) 50%,
-      //   rgba(31, 111, 235, 0.2) 70%,
-      //   rgba(31, 111, 235, 0) 80%
-      // );
-
-
-
+      cursor: pointer;
       background-repeat: no-repeat; /* Evita repeticiones del gradiente */
       background-position: center; /* Centra el gradiente */
       background-size: cover;
@@ -592,17 +581,27 @@ iroman-menu
       top: calc(50% - 20%);
       left:calc(50% - 20%);
       z-index: 30;
-      border: 1px solid var(--third-color);
+      // border: 1px solid var(--third-color);
       display: flex;
       justify-content: center;
       align-items: center;
 
-      div {
+      .logo-container{
+        // transition: transform 0.3s ease;
+        border-color: var(--text-color-ironman);
+        transition: background-color 0.3s ease;
         h2, span {
           color: var(--icon-text-color);
+          transition: transform 0.3s ease, color 0.3s ease;
         }
-        border-color: var(--icon-text-color);
+      }
 
+      .logo-container:hover {
+        background-color: var(--third-color);
+          h2, span {
+            transform: scale(0.9);
+            color: var(--main-color);
+          }
       }
     }
   }
@@ -654,10 +653,167 @@ iroman-menu
   }
 }
 
+@keyframes translateXCenter {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(80vw);
+  }
+  100% {
+    transform: translateX(10vw);
+  }
+}
+
+@keyframes translateXS {
+  0% {
+    transform: translateX(var(--scroll-percentage)); /* Comienza en la posición original */
+  }
+  25% {
+    transform: translateX(20%); /* Se desplaza al 80% de la pantalla a la derecha */
+  }
+  75%{
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(0%); /* Se dplaza al 80% de la pantalla a la izquierda */
+  }
+}
+@keyframes translateX {
+  0% {
+    transform: translateX(var(--scroll-percentage)); /* Comienza en la posición original */
+  }
+  25% {
+    transform: translateX(32%); /* Se desplaza al 80% de la pantalla a la derecha */
+  }
+  75%{
+    transform: translateX(-32%);
+  }
+  100% {
+    transform: translateX(0%); /* Se dplaza al 80% de la pantalla a la izquierda */
+  }
+}
+@keyframes translateXM {
+  0% {
+    transform: translateX(var(--scroll-percentage)); /* Comienza en la posición original */
+  }
+  25% {
+    transform: translateX(68%); /* Se desplaza al 80% de la pantalla a la derecha */
+  }
+  75%{
+    transform: translateX(-68%);
+  }
+  100% {
+    transform: translateX(0%); /* Se dplaza al 80% de la pantalla a la izquierda */
+  }
+}
+@keyframes translateXL {
+  0% {
+    transform: translateX(var(--scroll-percentage)); /* Comienza en la posición original */
+  }
+  25% {
+    transform: translateX(80%); /* Se desplaza al 80% de la pantalla a la derecha */
+  }
+  75%{
+    transform: translateX(-80%);
+  }
+  100% {
+    transform: translateX(0%); /* Se dplaza al 80% de la pantalla a la izquierda */
+  }
+}
+
+
+
+
+@keyframes fadein {
+ 0%{
+    visibility: hidden;
+    opacity: 0;
+  }
+  100%{
+   visibility: visible;
+   opacity: 1;
+  }
+}
+
+@keyframes rotate1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  20%{
+    transform: rotate(360deg);
+  }
+  40% {
+    transform: rotate(540deg);
+  }
+  60% {
+    transform: rotate(720deg);
+  }
+  80% {
+    transform: rotate(900deg);
+  }
+  100% {
+    transform: rotate(1080deg);
+  }
+}
+
+.fadein {
+  animation: fadein 1s ease-in,
+            rotate1 1.5s linear,
+            translateXS 10s linear infinite 1s;
+}
+
+@media screen and (min-width: 450px){
+  .fadein {
+    animation: fadein 1s ease-in,
+              rotate1 1.5s linear,
+              //  translateXCenter 2s ease-in-out forwards 1s,
+               translateX 10s linear infinite 1s;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .fadein {
+    animation: fadein 1s ease-in,
+              rotate1 1.5s linear,
+              //  translateXCenter 2s ease-in-out forwards 1s,
+               translateXM 10s linear infinite 1s;
+  }
+}
+
+@media screen and (min-width: 1000px){
+  .fadein {
+    animation: fadein 1s ease-in,
+              rotate1 1.5s linear,
+              //  translateXCenter 2s ease-in-out forwards 1s,
+               translateXL 10s linear infinite 1s;
+  }
+}
+
+
+
+
+.rotate {
+  animation: rotate1 1s linear 1s ,
+}
+
+.translate {
+  animation: translateX 10s linear infinite;
+}
+
 .spin-right{
   animation: spinRight 20s   infinite linear;
 }
 
 .spin-right-fast{
-  animation: spinRight .5s  infinite ease-out
+  animation: spinRight .3s infinite  linear;
 }
+
+.spin{
+  animation: spinRight .3s infinite  linear;
+}
+
+.translateX{
+  animation: translateX .3s infinite  linear;
+}
+

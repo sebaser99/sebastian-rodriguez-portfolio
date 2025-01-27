@@ -10,15 +10,15 @@
         <h2 [ngStyle]="{textAlign: 'left'}"><span [ngStyle]="{fontSize: '2.5rem'}">Sebastian Rodriguez</span></h2>
         <h3 [ngStyle]="{textAlign: 'left', marginBottom: '20px'}">Desarrollador Web</h3>
         <p>con <span>+2 años de experiencia</span> en el desarrollo de aplicaciones fullstack con <span>Angular, React y Node</span></p>
-        <div class="ironman-section">
-          <div class="ironman-container">
+        <div class="ironman-section" #ironSection>
+          <div class="ironman-container fadein" #ironContainer   (mouseover)="mouseEnterIronContainer()" (mouseleave)="mouseLeaveIronContainer()">
             <div class="ironman-options">
               <div class="ironman-option1">
                 <div class="option1">
                   <div class="option-container">
                     <span [ngStyle]="{display: 'block' }" class="email">sebaser99&#64;gmail.com</span>
                     <div class="email-icons-container">
-                      <ng-icon class="copy-icon" name="matContentCopy"></ng-icon>
+                      <ng-icon class="copy-icon" name="matContentCopy" (click)="copy()"></ng-icon>
                       <a href="mailto:sebaser99@gmail.com?subject=Solicitud%20de%20Servicios%20de%20desarrollo%20web&body=Hola,%20deseo%20cotizar%20el%20desarollo%20de..." ><ng-icon class="send-icon" name="matSend" ></ng-icon></a>
                     </div>
                   </div>
@@ -53,7 +53,7 @@
                 </div>
               </div>
             </div>
-            <div class="ironman-nucleus  ">
+            <div class="ironman-nucleus" (click)="addAnimation()">
               <div class="logo-container spin-right">
                 <h2 >S<span [ngStyle]="{fontSize: '1.2rem'}">R</span></h2>
               </div>

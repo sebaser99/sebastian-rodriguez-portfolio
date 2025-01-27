@@ -1,5 +1,5 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Component, Inject, inject, PLATFORM_ID } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, Inject, inject, PLATFORM_ID, Renderer2, ViewChild } from '@angular/core';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { bootstrapGithub } from '@ng-icons/bootstrap-icons';
@@ -35,13 +35,22 @@ import { Router, RouterModule } from '@angular/router';
     tablerFileCv, matDownload, matSend, matContentCopy
   })]
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit {
   isBrowser: boolean;
+  initialPercentage: number = 0;
+  leftPercentage: number = 0;
+  rightPercentage: number = 0;
+  @ViewChild('ironSection') ironSection!: ElementRef;
+  @ViewChild('ironContainer') ironContainer!: ElementRef;
   constructor(
    @Inject(PLATFORM_ID) private platformId: Object,
+   private renderer: Renderer2
 
   ){
     this.isBrowser = isPlatformBrowser(this.platformId);
+  }
+  ngAfterViewInit(): void {
+
   }
 
   filter : string = '';
@@ -51,6 +60,11 @@ export class HomeComponent {
     apply: true,
     tag: null
   };
+
+   @HostListener('window:resize', ['$event'])
+    onResize(event: any) {
+      this.checkScreenSize();
+    }
 
 
   changeValue(value: any){
@@ -81,6 +95,107 @@ export class HomeComponent {
         link.href = fileUrl;
         link.download = 'cv-Sebastian-Rodriguez.pdf';  // Nombre del archivo a descargar
         link.click();
+    }
+  }
+
+  addAnimation(){
+    if(this.isBrowser){
+      const element = document.querySelector(`.ironman-container`) as HTMLElement
+      if(element){
+        if(element.classList.contains('fadein')){
+          element.classList.remove('fadein')
+        }else {
+          element.classList.remove('translate')
+        }
+
+        element.style.animationPlayState = 'stop';
+        element.classList.add('spin-right-fast')
+        element.classList.add('translate')
+        element.style.animationPlayState = 'running';
+        setTimeout(() => {
+          element.classList.remove('spin-right-fast')
+
+        }, 1000);
+
+      }
+    }
+  }
+
+  copy(){
+    if(this.isBrowser){
+      navigator.clipboard.writeText('sebaser99@gmail.com').then(function() {
+        alert('Texto copiado al portapapeles');
+      }).catch(function(err) {
+        console.error('Error al copiar el texto: ', err);
+      });
+    }
+  }
+
+  mouseEnterIronContainer(){
+    if(this.isBrowser){
+      const element = document.querySelector(`.ironman-container`) as HTMLElement
+
+      if(element && (!element.classList.contains('spin-right-fast')) ||element &&  !element.classList.contains('translate') ){
+        element.style.animationPlayState = 'paused';
+      }
+    }
+  }
+
+  mouseLeaveIronContainer(){
+    if(this.isBrowser){
+      const element = document.querySelector(`.ironman-container`) as HTMLElement
+
+      if(element){
+        element.style.animationPlayState = 'running';
+      }
+    }
+  }
+
+  onScroll(event: Event): void {
+    const element = event.target as HTMLElement;
+
+    // Obtener el porcentaje de desplazamiento horizontal
+    const scrollLeft = element.scrollLeft;
+    const scrollWidth = element.scrollWidth;
+    const clientWidth = element.clientWidth;
+
+    const percentage = (scrollLeft / (scrollWidth - clientWidth)) * 100;
+
+    console.log(`Desplazamiento: ${percentage.toFixed(2)}%`);
+
+    // Aplicar el porcentaje a una animación o estilo
+    this.renderer.setStyle(
+      element,
+      '--scroll-percentage',
+      `${percentage.toFixed(2)}%`
+    );
+  }
+
+  checkScreenSize() {
+    if (isPlatformBrowser(this.platformId)) {
+      const width = window.innerWidth;
+      if (this.ironContainer) {
+        console.log('ironContainer', this.ironContainer)
+        const scrollLeft = this.ironContainer.nativeElement.scrollLeft;
+        const scrollWidth = this.ironContainer.nativeElement.scrollWidth;
+        const clientWidth = this.ironContainer.nativeElement.clientWidth;
+
+        // Evitar divisiones por cero
+        if (scrollWidth > clientWidth) {
+          const percentage = (scrollLeft / (scrollWidth - clientWidth)) * 100;
+          console.log('percentage', percentage);
+
+          // Asegúrate de que el valor se pasa correctamente a CSS
+          this.renderer.setStyle(
+            this.ironContainer,
+            '--scroll-percentage',
+            `${percentage.toFixed(2)}%`
+          );
+        }
+      } else {
+        console.warn('El contenedor ironContainer no está definido.');
+      }
+
     }
   }
 }
