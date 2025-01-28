@@ -1,5 +1,5 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, HostListener, Inject, inject, PLATFORM_ID, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, Inject,  output,  PLATFORM_ID,  ViewChild } from '@angular/core';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { bootstrapGithub } from '@ng-icons/bootstrap-icons';
@@ -19,7 +19,7 @@ import { diDigitaloceanOriginalWordmark } from '@ng-icons/devicon/original';
 import { diNginxOriginal } from '@ng-icons/devicon/original';
 import { diAngularjsOriginal } from '@ng-icons/devicon/original';
 import { tablerFileCv} from '@ng-icons/tabler-icons';
-import { Router, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 
 @Component({
@@ -35,40 +35,73 @@ import { Router, RouterModule } from '@angular/router';
     tablerFileCv, matDownload, matSend, matContentCopy
   })]
 })
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent  {
+  passValue = output<any>();
   isBrowser: boolean;
   initialPercentage: number = 0;
   leftPercentage: number = 0;
   rightPercentage: number = 0;
+  scrollPercentage: number = 20;
+  projectsIds : string[] =  ['project0', 'project1', 'project2']
+  heightMeSection : number = 0;
+
   @ViewChild('ironSection') ironSection!: ElementRef;
   @ViewChild('ironContainer') ironContainer!: ElementRef;
+  @ViewChild('projectsSection') projectsSection!: ElementRef;
+  @ViewChild('meSection') meSection!: ElementRef;
   constructor(
-   @Inject(PLATFORM_ID) private platformId: Object,
-   private renderer: Renderer2
-
+   @Inject(PLATFORM_ID) private platformId: Object
   ){
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
-  ngAfterViewInit(): void {
 
-  }
+
+
+
 
   filter : string = '';
-  modeDark: boolean = false;
+  modeDark?: boolean;
   isScrolled: boolean = false;
   classAddNavbarObject: {apply: boolean, tag: string | null} = {
     apply: true,
     tag: null
   };
+ @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const scrollPosition = window.scrollY + window.innerHeight / 2;
+    const meHeight = this.meSection.nativeElement.offsetHeight;
+    this.isScrolled = scrollPosition > this.projectsSection.nativeElement.offsetTop;
 
-   @HostListener('window:resize', ['$event'])
-    onResize(event: any) {
-      this.checkScreenSize();
+    if(this.isScrolled){
+      for (const id of this.projectsIds) {
+        const index = this.projectsIds.indexOf(id);
+        const element = document.getElementById(id) as HTMLElement;
+        let offset = 0;
+        let offsetReverse = 0;
+        if(index === 0){
+          offset = (element.offsetTop * 0.3)
+          offsetReverse = (element.offsetTop * 0.6)
+        } else {
+          offset = (element.offsetTop * 0.15)
+          offsetReverse = (element.offsetTop * 0.4)
+        }
+
+        if (element && ((element.offsetTop - offset) <= window.scrollY) && (element.offsetTop + meHeight > window.scrollY)) {
+          element.classList.add('show-projects')
+        } else if (element){
+            if( (element.offsetTop - offsetReverse)  >= window.scrollY) {
+              element.classList.remove('show-projects')
+            }
+        }
+
+      }
     }
+  }
 
 
   changeValue(value: any){
-    this.modeDark = value;
+    this.passValue.emit(value)
+
   }
 
   isScrolledToggle(value: any){
@@ -148,54 +181,6 @@ export class HomeComponent implements AfterViewInit {
       if(element){
         element.style.animationPlayState = 'running';
       }
-    }
-  }
-
-  onScroll(event: Event): void {
-    const element = event.target as HTMLElement;
-
-    // Obtener el porcentaje de desplazamiento horizontal
-    const scrollLeft = element.scrollLeft;
-    const scrollWidth = element.scrollWidth;
-    const clientWidth = element.clientWidth;
-
-    const percentage = (scrollLeft / (scrollWidth - clientWidth)) * 100;
-
-    console.log(`Desplazamiento: ${percentage.toFixed(2)}%`);
-
-    // Aplicar el porcentaje a una animación o estilo
-    this.renderer.setStyle(
-      element,
-      '--scroll-percentage',
-      `${percentage.toFixed(2)}%`
-    );
-  }
-
-  checkScreenSize() {
-    if (isPlatformBrowser(this.platformId)) {
-      const width = window.innerWidth;
-      if (this.ironContainer) {
-        console.log('ironContainer', this.ironContainer)
-        const scrollLeft = this.ironContainer.nativeElement.scrollLeft;
-        const scrollWidth = this.ironContainer.nativeElement.scrollWidth;
-        const clientWidth = this.ironContainer.nativeElement.clientWidth;
-
-        // Evitar divisiones por cero
-        if (scrollWidth > clientWidth) {
-          const percentage = (scrollLeft / (scrollWidth - clientWidth)) * 100;
-          console.log('percentage', percentage);
-
-          // Asegúrate de que el valor se pasa correctamente a CSS
-          this.renderer.setStyle(
-            this.ironContainer,
-            '--scroll-percentage',
-            `${percentage.toFixed(2)}%`
-          );
-        }
-      } else {
-        console.warn('El contenedor ironContainer no está definido.');
-      }
-
     }
   }
 }

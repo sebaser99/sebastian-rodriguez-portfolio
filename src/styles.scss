@@ -24,7 +24,8 @@
   --text-color-ironman: #{$text-color-ironman-bright};
 }
 
-.home.dark-theme {
+.dark-theme {
+  .home{
   --main-color : #{$main-color-dark};
   --secondary-color: #{$secondary-color-dark};
   --third-color: #{$third-color-dark};
@@ -43,7 +44,7 @@
   --gradient7: #{$gradient7-dark};
   --gradient8: #{$gradient8-dark};   /* Azul más vibrante */
   --gradient9: #{$gradient9-dark};
-
+  }
 }
 html {
   margin: 0px;

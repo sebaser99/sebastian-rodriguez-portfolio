@@ -1,1 +1,5 @@
-<home />
+<home (passValue)="changeValue($event)" *ngIf="isHydrated; else loading"/>
+
+<ng-template #loading>
+  <loader />
+</ng-template>

@@ -5,6 +5,15 @@
   border-radius: 20px;
   box-shadow: 0 4px 6px rgba(4, 108, 143, 0.1),
   0 4px 3px rgba(4, 108, 143, 0.06);
+  visibility: 0;
+  opacity: 0;
+  transition: opacity 0.7 ease, visibility 0.7 ease;
+
+  &.show-projects {
+    opacity: 1;
+    visibility: visible;
+
+  }
 
   .project-img-container {
     padding: 0px;

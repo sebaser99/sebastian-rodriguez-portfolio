@@ -118,7 +118,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
         if (element) {
           const { offsetTop, offsetHeight } = element;
           if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-
             if(this.currentFragment !== section.label) {
               if(this.scrollEnabled){
                   this._router.navigate([], { fragment: section.fragment });

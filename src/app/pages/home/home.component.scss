@@ -607,7 +607,7 @@ iroman-menu
   }
 }
 
-@media screen and (min-width: 400px){
+@media screen and (min-width: 350px){
   .ironman-section {
     .ironman-container {
       width: 250px;
@@ -628,8 +628,8 @@ iroman-menu
 @media screen and (min-width: 768px){
   .ironman-section {
     .ironman-container {
-      width: 320px;
-      height: 320px;
+      width: 335px;
+      height: 335px;
     }
   }
 }
@@ -667,7 +667,7 @@ iroman-menu
 
 @keyframes translateXS {
   0% {
-    transform: translateX(var(--scroll-percentage)); /* Comienza en la posición original */
+    transform: translateX(0); /* Comienza en la posición original */
   }
   25% {
     transform: translateX(20%); /* Se desplaza al 80% de la pantalla a la derecha */
@@ -681,7 +681,7 @@ iroman-menu
 }
 @keyframes translateX {
   0% {
-    transform: translateX(var(--scroll-percentage)); /* Comienza en la posición original */
+    transform: translateX(0); /* Comienza en la posición original */
   }
   25% {
     transform: translateX(32%); /* Se desplaza al 80% de la pantalla a la derecha */
@@ -695,7 +695,7 @@ iroman-menu
 }
 @keyframes translateXM {
   0% {
-    transform: translateX(var(--scroll-percentage)); /* Comienza en la posición original */
+    transform: translateX(0); /* Comienza en la posición original */
   }
   25% {
     transform: translateX(68%); /* Se desplaza al 80% de la pantalla a la derecha */
@@ -709,7 +709,7 @@ iroman-menu
 }
 @keyframes translateXL {
   0% {
-    transform: translateX(var(--scroll-percentage)); /* Comienza en la posición original */
+    transform: translateX(0); /* Comienza en la posición original */
   }
   25% {
     transform: translateX(80%); /* Se desplaza al 80% de la pantalla a la derecha */
@@ -760,7 +760,7 @@ iroman-menu
 .fadein {
   animation: fadein 1s ease-in,
             rotate1 1.5s linear,
-            translateXS 10s linear infinite 1s;
+            translateXS 20s linear infinite 1s;
 }
 
 @media screen and (min-width: 450px){
@@ -768,7 +768,7 @@ iroman-menu
     animation: fadein 1s ease-in,
               rotate1 1.5s linear,
               //  translateXCenter 2s ease-in-out forwards 1s,
-               translateX 10s linear infinite 1s;
+               translateX 20s linear infinite 1s;
   }
 }
 
@@ -777,7 +777,7 @@ iroman-menu
     animation: fadein 1s ease-in,
               rotate1 1.5s linear,
               //  translateXCenter 2s ease-in-out forwards 1s,
-               translateXM 10s linear infinite 1s;
+               translateXM 20s linear infinite 1s;
   }
 }
 
@@ -786,7 +786,7 @@ iroman-menu
     animation: fadein 1s ease-in,
               rotate1 1.5s linear,
               //  translateXCenter 2s ease-in-out forwards 1s,
-               translateXL 10s linear infinite 1s;
+               translateXL 20s linear infinite 1s;
   }
 }
 
@@ -816,4 +816,5 @@ iroman-menu
 .translateX{
   animation: translateX .3s infinite  linear;
 }
+
 

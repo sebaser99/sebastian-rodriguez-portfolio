@@ -1,11 +1,11 @@
-<div class="home" [ngClass]="{'dark-theme': modeDark}" >
+<div class="home" >
   <header class="container">
     <navbar (passValue)="changeValue($event)"
       (passScrolled)="isScrolledToggle($event)"
       (passClassObjectNavbar)="changeNavbarClass($event)"
     />
   </header>
-  <div class="container background-me">
+  <div class="container background-me" #meSection>
     <section class="me " >
         <h2 [ngStyle]="{textAlign: 'left'}"><span [ngStyle]="{fontSize: '2.5rem'}">Sebastian Rodriguez</span></h2>
         <h3 [ngStyle]="{textAlign: 'left', marginBottom: '20px'}">Desarrollador Web</h3>
@@ -64,7 +64,7 @@
     </section>
   </div>
 
-  <div class="container">
+  <div class="container" #projectsSection>
     <section class="projects" id="projects" [ngClass]="{'scrolled': classAddNavbarObject.apply && classAddNavbarObject.tag === 'projects'}">
       <h2 class="polygon" [ngStyle]="{marginBottom: '7px'}">Proyectos</h2>
       <h3 [ngStyle]="{marginLeft: '30px'}">Lo más destacado</h3>      <!-- <p>Soluciones para problemas reales</p> -->

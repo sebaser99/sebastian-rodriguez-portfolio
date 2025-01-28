@@ -1,4 +1,4 @@
-<div class="project-card" *ngIf="project" [ngClass]="{'last-card-margin-bottom': last}">
+<div class="project-card" *ngIf="project" [ngClass]="{'last-card-margin-bottom': last}" [id]="'project'+index">
     <div class="project-img-container">
       <img class="project-img"
       [src]="project.image" alt="onemall"   />
