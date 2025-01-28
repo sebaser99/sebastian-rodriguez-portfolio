@@ -653,18 +653,6 @@ iroman-menu
   }
 }
 
-@keyframes translateXCenter {
-  0% {
-    transform: translateX(0%);
-  }
-  50% {
-    transform: translateX(80vw);
-  }
-  100% {
-    transform: translateX(10vw);
-  }
-}
-
 @keyframes translateXS {
   0% {
     transform: translateX(0); /* Comienza en la posición original */
@@ -767,7 +755,6 @@ iroman-menu
   .fadein {
     animation: fadein 1s ease-in,
               rotate1 1.5s linear,
-              //  translateXCenter 2s ease-in-out forwards 1s,
                translateX 20s linear infinite 1s;
   }
 }
@@ -776,7 +763,6 @@ iroman-menu
   .fadein {
     animation: fadein 1s ease-in,
               rotate1 1.5s linear,
-              //  translateXCenter 2s ease-in-out forwards 1s,
                translateXM 20s linear infinite 1s;
   }
 }
@@ -785,7 +771,7 @@ iroman-menu
   .fadein {
     animation: fadein 1s ease-in,
               rotate1 1.5s linear,
-              //  translateXCenter 2s ease-in-out forwards 1s,
+              //   2s ease-in-out forwards 1s,
                translateXL 20s linear infinite 1s;
   }
 }
@@ -793,28 +779,11 @@ iroman-menu
 
 
 
-.rotate {
-  animation: rotate1 1s linear 1s ,
-}
 
-.translate {
-  animation: translateX 10s linear infinite;
-}
 
-.spin-right{
-  animation: spinRight 20s   infinite linear;
-}
 
-.spin-right-fast{
-  animation: spinRight .3s infinite  linear;
-}
 
-.spin{
-  animation: spinRight .3s infinite  linear;
-}
 
-.translateX{
-  animation: translateX .3s infinite  linear;
-}
+
 
 
